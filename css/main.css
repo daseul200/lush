@@ -1,0 +1,508 @@
+/*웹폰트(노토산스)*/
+@import url(http//fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+*{margin: 0; padding: 0;}
+li{list-style: none;}
+a{text-decoration: none; color: #333; display: block; 
+        font-family: 'Noto Sans KR', sans-serif;}
+/*스타일설정*/
+header, section, footer{
+    width: 100%;
+    float: left;
+}
+/*모든 영역 박스사이징*/
+header, section, footer, div{
+    box-sizing: border-box;
+}
+body{
+    font-size: 16px; 
+    font-family: 'Noto Sans KR', sans-serif;
+}
+img{
+    width: 100%;
+}
+/*브라우저의 가운데 정렬*/
+.center_box{
+    width: 1300px;
+    margin:0 auto;
+}
+/*header 전체*/
+header{
+    height: 130px;
+}
+header .up_area{
+    height: 40px;
+    width: 100%;
+    background-color: #ff225b;
+}
+header .up_area .right_menu{
+    float: right;
+}
+header .up_area .right_menu ul li{
+    float: left;
+}
+header .up_area .right_menu ul li a{
+    padding: 5px 10px;
+    font-size: 14px;
+    color: #fff;
+    margin: 5px 3px;
+}
+header .up_area .right_menu ul li:last-child a{
+    border: 1px solid #fff;
+}
+/*마지막에서 2번째 li를 가리킴*/
+header .up_area .right_menu ul li:nth-last-child(2) a{
+    border: 1px solid #fff;
+}
+/*로고는 왼쪽에 배치*/
+header .down_area .logo{
+    float: left;
+    width: 100px;
+    margin: 20px 0;
+}
+/*메뉴는 오른쪽 배치*/
+header .down_area nav{
+    float: right;
+    z-index: 11;
+    position: relative;
+}
+/*주메뉴*/
+header .down_area nav > ul > li{
+    float: left;
+    padding: 20px 0;
+}
+header .down_area nav > ul > li > a{
+    margin-right: 90px;
+    /*주메뉴가 서브메뉴를 밀어냄*/
+    padding: 10px 0;
+    padding-bottom: 30px;
+    font-size: 18px;
+    font-weight: bold;
+    position: relative;
+    /*마우스 오버할 때 밑줄이 글자길이 만큼만 그려짐*/
+    display: inline-block;
+}
+header .down_area nav > ul > li > a:after{
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 1px;
+    background-color: #ff225b;
+    left: 50%;
+    bottom: 25px;
+    transition: all 0.5s;
+}
+header .down_area nav > ul > li > a:hover:after{
+    width: 100%;
+    left: 0;
+}
+/*서브메뉴*/
+header .down_area nav .sub{
+    /* display: none; */
+    background-color: white;
+    border-top: 3px solid #ff225b;
+    /*서서히 나타남*/
+    height: 0;
+    overflow: hidden;
+    /*투명도*/
+    opacity: 0;
+    /*애니메이션*/
+    transition: all 1s;
+}
+header .down_area nav .sub li a{
+    padding: 12px;
+    font-size: 16px;
+    border-bottom: 1px solid #ddd;
+}
+header .down_area nav .sub li a:hover{
+    background-color: #efefef;
+}
+header .down_area nav > ul > li:hover .sub{
+    /* display: block; */
+    height: auto;
+    opacity: 1;
+}
+section{
+    padding-top: 80px;
+    padding-bottom: 90px;
+}
+section#visual{
+    padding: 0;
+    position: relative;
+    z-index: 10;
+}
+section#banner .movie{
+    width: 675px;
+    height: 377px;
+    margin-right: 40px;   
+    float: left;
+    background-color: #111;
+}
+section#banner .banner_right{
+    width: 585px;
+    height: 377px;
+    float: left;
+}
+section#banner .banner_right ul li{
+    float: left;
+    width: 280px;
+    height: 176px;
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    /* 자식객체의 위치를 설정할 때 부모객체인 li기준으로 함 */
+    position: relative;
+}
+section#banner .banner_right ul li:first-child{
+    background-color: #a1d6a8;
+    margin-right: 25px;
+    margin-bottom: 25px;
+}
+section#banner .banner_right ul li:nth-child(2){
+    background-image: url(../img/ytb2.png);
+    margin-bottom: 25px;
+}
+section#banner .banner_right ul li:nth-child(3){
+    background-image: url(../img/ytb3.png);
+    margin-right: 25px;
+}
+section#banner .banner_right ul li:last-child{
+    background-color: #fde9ae;
+}
+section#banner .banner_right ul li .bg{
+    /* bg와 des와 겹침 */
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+section#banner .banner_right ul li .des{
+    position: absolute;
+    color: #fff;
+    padding: 10px;
+    /*padding을 넣어도 .des의 크기고정*/
+    box-sizing: border-box;
+}
+section#banner .banner_right ul li .des h3{
+    font-size: 26px;
+}
+section#banner .banner_right ul li .des p{
+    font-size: 16px;
+    margin-top: 10px;
+}
+section#banner .banner_right ul li .des img{
+    width: 40px;
+    margin-top: 3px;
+}
+section#banner .banner_right ul li .pic1{
+    position: absolute;
+    width: 150px;
+    right: 0;
+    bottom: -5px;
+    margin-right: 100px;
+}
+/* section#banner .banner_right ul li .pic2{
+    position: absolute;
+    width: 150px;
+    bottom: -5px;
+} */
+section#banner .banner_right ul li:first-child h3 {
+    padding-left: 120px;
+    font-size: 30px;
+}
+section#banner .banner_right ul li:nth-child(2) h3{
+    text-align: center;
+    margin-left: 10px;
+}
+section#banner .banner_right ul li:last-child h3{
+    margin-left: 60px;
+}
+section#banner .banner_right ul li:last-child p{
+    margin-left: 70px;
+}
+
+section#list{
+    /* background-image: url(../img/); */
+    background-color: #454544;
+    /*배경이미지를 고정시킴*/
+    background-attachment: fixed;
+}
+/*모든 section의 h1에 스타일 적용*/
+section#list h1{
+    text-align: center; font-size: 28px;
+    background-image: url();
+    background-size: 100PX;
+    background-repeat: no-repeat;
+    background-position: 100PX center;}
+section#list .list_box{
+    margin-top: 60px;
+}
+section#list .list_box ul li{
+    float: left;
+    margin-right: 50px;
+    width: 220px;
+}
+/*마지막 li영역의 오른쪽 여백 없앰*/
+section#list .list_box ul li:last-child{
+    margin-right: 0;
+}
+section#list .list_box ul li .photo{
+    width: 220px;
+    height: 220px;
+    border-radius: 100%;
+    overflow: hidden;
+}
+/* .photo안의 이미지 조금 커지는 애니메이션 */
+section#list .list_box ul li .photo img{
+    transform: scale(1,1);
+    transition: all 0.5s;
+}
+section#list .list_box ul li:hover .photo img{
+    transform: scale(1.1,1.1);
+}
+section#list .list_box ul li p{
+    width: 130px;
+    height: 40px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 10px;
+    line-height: 40px;
+    color: #fff;
+    background-color: #222222;
+    margin: 13px auto;
+}
+section#list .list_box ul li{
+    font-style: normal;
+    font-size: 14px;
+    text-align: center;
+    display: block;
+    margin-top: 20px;
+    color: #fff;
+}
+
+section#event .e_left{
+    width: 830px;
+    height: 550px;
+    float: left;
+    padding: 50px;
+    margin-right: 26px;
+}
+section#event .e_left h1{
+    color: #111;
+    font-size: 45px;
+    font-weight: bold;
+    text-align: right;
+    text-shadow: #575757 0px 10px 20px;
+    margin-top: 60px;
+    margin-bottom: 30px;
+    margin-right: 50px;
+}
+section#event .e_left p{
+    color: #111;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: right;
+    margin-right: 30px;
+    margin-top: 40px;
+    padding: 10px 20px;
+}
+section#event .e_right{
+    float: left;
+}
+section#event .e_right div{
+    width: 444px;
+    height: 262px;
+}
+section#event .e_right .event1 h3{
+    color: #fff;
+    font-size: 60px;
+    text-align: center;
+    padding-top: 60px;                                                                                                                                                                                                                                                                                                       
+}
+section#event .e_right .event1 p, span{
+    float: left;
+    font-size: 30px;
+    font-weight: bold;
+    padding: 5px;
+}
+section#event .e_right .event1 p{
+    color: #b81f22;
+    margin-left: 65px;
+}
+section#event .e_right .event1 span{
+    color: #111;
+}
+section#event .e_right .event2 span{
+    color: #d3505a;
+    margin-top: 120px;
+    margin-left: 15px;
+}
+section#event .e_right .event2 #p1{
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    padding-top: 180px;
+    margin-left: 17px;
+}
+section#event .e_right .event2 #p2{
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 80px;
+    margin-top: 10px;
+}
+section#event .e_left{
+    background-image: url(../img/event.png);
+}
+section#event .e_right .event1{
+    background-image: url(../img/event2.png);
+    margin-bottom: 26px;
+}
+section#event .e_right .event2{
+    background-image: url(../img/event3.png);
+}
+
+/* section#event .center_box{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+} */
+section#notice .center_box .news{
+    width: 630px;
+    height: 300px;
+    /* .recurit와 가로로 정렬 */
+    float: left;
+    margin-right: 40px;
+}
+section#notice .title{
+    width: 100%;
+    /* title과 .con1영역을 분리함 */
+    float: left;
+    /* hr과 떨어지게 함 */
+    margin-bottom: 10px;
+}
+section#notice .title h1{
+    /* 더하기 버튼 a태그와 가로로 정렬 */
+    float: left;
+    /* 글자가 줄 바꿈 되지 않도록 함 */
+    white-space: nowrap;
+}
+/* 더하기 버튼 */
+section#notice .title a{
+    /*  h1태그와 가로로 정렬 */
+    float: right;
+    width: 40px;
+}
+/* 공지사항, 채용문의 제목 아래쪽 선 */
+section#notice hr{
+    background-color: #efefef;
+    border: none;
+    height: 1px;
+    width: 100%;
+}
+section#notice .news .con1{
+    /* title과 .con1영역을 분리함 */
+    float: left;
+    width: 100%;
+}
+section#notice .news .con1 ul li{
+    padding: 10px 0 30px;
+    border-bottom: 1px solid #efefef;
+}
+section#notice .news .con1 ul li a{
+    padding: 10px 0;
+}
+section#notice .news .con1 ul li p{
+    /* a태그와 가로로 나열 */
+    float: left;
+    font-size: 14px;
+}
+section#notice .news .con1 ul li span{
+    width: 30px;
+    /* 인라인 요소를 블록요소로 변환 */
+    display: block;
+    /* p태그랑 가로로 나열 */
+    float: right;
+}
+
+section#notice .recurit{
+    width: 630px;
+    /* .news영역과 가로로 나열 */
+    float: left;
+}
+section#notice .recurit .con2{
+    width: 100%;
+    height: 170px;
+    background-image: url(../img/hire.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    /* background-color: #a1d6a8; */
+    box-sizing: border-box;
+    padding: 15px;
+    margin-top: 10px;
+}
+section#notice .recurit .con2 p{
+    line-height: 24px;
+    /* color: #fff; */
+    padding: 15px;
+    font-size: 14px;
+    color: #fff;
+    line-height: 37px;
+}
+
+footer{
+    background-color: #efefef;
+    padding: 30px 0;
+}
+footer .f_logo{
+    width: 120px;
+    float: left;
+    margin-right: 100px;
+}
+footer .addr{
+    /* .f_logo와 가로로 나열 */
+    float: left;
+}
+footer .addr .info ul li{
+    /* 이용약관, 개인...등 가로로 나열 */
+    float: left;
+}
+footer .addr .info ul li a{
+    font-size: 14px;
+    padding: 10px 40px;
+    padding-left: 0%;
+}
+footer .addr address{
+    /* 기울어진 글자 기움임 없앰 */
+    font-style: normal;
+    /* .info영역의 li에 적용된 floot:left를 adress에서 적용 안되게 함 */
+    /* float:left의 영향을 받지 않게 함 */
+    clear: both;
+    color: #999;
+    font-size: 14px;
+}
+footer .sns{
+    /* f_ligi와 .addr영역과 나란히 가로로 나열 */
+    float: right;
+    margin-top: 20px;
+}
+footer .sns ul li{
+    float: left;
+    margin-left: 10px;
+}
+footer .sns ul li a span{
+    width: 24px;
+    display: block;
+    float: left;
+    padding: 0 5px;
+}
+footer .sns ul li a p{
+    float: left;
+    font-size: 14px;
+    line-height: 40px;
+    margin-left: 10px;
+}
